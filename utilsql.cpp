@@ -31,6 +31,7 @@ QString UtilSQL::buildInsert(){
         if(i != metaObject->propertyCount() - 1) tagSQLInsert += ", ";
         else tagSQLInsert += ')';
     }
+    qDebug() << tagSQLInsert;
     return tagSQLInsert;
 }
 
