@@ -1,6 +1,6 @@
 # UtilSQL
 
-facilitate bank operations, using class that inherits from Object. Class using PROPERTY.
+Facilitate bank operations, using class that inherits from Object. Class using PROPERTY.
 
 # Environment
 
