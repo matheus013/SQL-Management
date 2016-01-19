@@ -10,6 +10,12 @@ int main(){
     my->setProperty("sexo","masculino");
     qDebug() << my->property("sexo");
     // INSERT INTO table_name (var_name,..,var_name) VALUES(var_value,...,var_value)
-    qDebug() << UtilSQL::buildInsert(my, "person");
+    UtilSQL sql(my,"person");
+
+    qDebug() << sql.buildInsert();
+    qDebug() << sql.buildUpdate("id");
+    qDebug() << sql.buildDetele("id");
+    qDebug() << sql.buildDetele({"id","name","age"},"AND");
+    qDebug() << sql.buildDeleteAll();
 
 }
