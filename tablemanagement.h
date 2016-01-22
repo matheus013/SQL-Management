@@ -3,19 +3,22 @@
 #include <QObject>
 #include "QQmlHelpers"
 
-class UtilSQL : public QObject{
+class TableManagement : public QObject{
     Q_OBJECT
 protected:
     QObject * m_object;
     QString m_nameTable;
 public:
-    UtilSQL();
-    UtilSQL(QObject * object, QString nameTable);
-    QString buildInsert();
+    TableManagement();
+    TableManagement(QObject * object, QString nameTable = "");
+    QString buildInsert(QString identifier = "id");
     QString buildUpdate(QString where);
     QString buildDetele(QString where);
     QString buildDetele(QStringList where, QString myOperator);
     QString buildDeleteAll();
+    QString buildSelect();
+    QString buildCreateTable();
+    QString readType(const QVariant variant, int length = 255);
 
 
     QString nameTable() const;

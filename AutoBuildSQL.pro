@@ -1,4 +1,4 @@
-QT += core sql
+QT += core sql quick
 QT -= gui
 
 CONFIG += c++11
@@ -11,12 +11,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     myclass.cpp \
-    utilsql.cpp \
     connection.cpp \
-    daogeneric.cpp
+    database.cpp \
+    tablemanagement.cpp \
+    daobject.cpp \
+    users.cpp
 
 HEADERS += \
     myclass.h \
-    utilsql.h \
     connection.h \
-    daogeneric.h
+    database.h \
+    tablemanagement.h \
+    daobject.h \
+    users.h

@@ -1,15 +1,13 @@
-#include <QCoreApplication>
-#include <QDebug>
+#include <QGuiApplication>
 #include "myclass.h"
-#include "utilsql.h"
-#include "daogeneric.h"
+#include "tablemanagement.h"
+#include "daobject.h"
 
-int main(){
-    MyClass *my = new MyClass();
-    my->set_age(20);
-    my->set_name("Matheus");
-//    my->set_id(1);
-    // INSERT INTO table_name (var_name,..,var_name) VALUES(var_value,...,var_value)
-    DAOGeneric *dao = new DAOGeneric();
+int main(int argc, char *argv[]){
+    QGuiApplication app(argc,argv);
+    MyClass *my = new MyClass("admin",0);
+    DAObject *dao = new DAObject();
     dao->insert(my);
+
+    return app.exec();
 }

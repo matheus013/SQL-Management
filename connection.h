@@ -8,8 +8,10 @@ class Connection : public QObject{
     Q_OBJECT
     QSqlDatabase dataConnection;
 public:
-    Connection(QString dataBaseName,QString userName,
-               QString password,QString hostName = "localhost",
+    Connection(QString dataBaseName, QString userName,
+               QString password, QString hostName = "localhost",
                QString database = "QSQLITE");
     bool startConnection();
+
+    QSqlDatabase getDataConnection() const;
 };
