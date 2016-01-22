@@ -18,5 +18,5 @@ public:
     void remove(QObject *object, QString where);
     void remove(QObject *object, QStringList where, QString myOperator);
     void removeAll(QObject *object);
-    void customCommand(QString strQuery);
+    void customCommand(QString textQuery);
 };
