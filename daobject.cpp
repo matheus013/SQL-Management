@@ -1,4 +1,5 @@
 #include <QSqlQuery>
+#include <QQueue>
 #include <QDebug>
 #include <QSqlError>
 #include "daobject.h"
@@ -6,7 +7,7 @@
 #include "tablemanagement.h"
 
 DAObject::DAObject(){
-    connection = new Connection("mydata","admin","matheus23","localhost/phpmyadmin");
+    connection = new Connection("data","postgres","senha","localhost","QPSQL");
     connection->startConnection();
     if(connection->getDataConnection().isOpen()) qDebug() << "Successfully connected!";
 }
@@ -21,12 +22,7 @@ QObject *DAObject::at(int id){return data.at(id);}
 void DAObject::insert(QObject *object){
     TableManagement sql(object, object->objectName());
     QSqlQuery query;
-    QString textQuery = sql.buildCreateTable();
-
-    if(!query.exec(textQuery)) qDebug() << query.lastError().text();
-    else qDebug() << "Successfully completed operation!";
-
-    textQuery = sql.buildInsert();
+    QString textQuery = sql.buildInsert();
 
     if(!query.exec(textQuery)) qDebug() << query.lastError().text();
     else qDebug() << "Successfully completed operation!";
@@ -73,4 +69,12 @@ void DAObject::customCommand(QString textQuery){
 
     if(!query.exec(textQuery)) qDebug() << query.lastError().text();
     else qDebug() << "Successfully completed operation!";
+}
+
+void DAObject::loadData(QString nameTable){
+    QSqlQuery query;
+
+    while(query.next()){
+
+    }
 }

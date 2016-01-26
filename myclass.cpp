@@ -4,8 +4,8 @@ MyClass::MyClass(){
     setObjectName("test");
 }
 
-MyClass::MyClass(QString name, int age){
-    setObjectName("test");
-    set_name(name);
-    set_age(age);
+MyClass::MyClass(int id, QString login){
+    setObjectName("x_user");
+    set_id(id);
+    set_login(login);
 }

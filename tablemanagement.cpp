@@ -42,6 +42,7 @@ QString TableManagement::buildInsert(QString identifier){
             else tag += ')';
         }
     }
+    qDebug() << tag;
     return tag;
 }
 
@@ -79,7 +80,7 @@ QString TableManagement::buildDetele(QStringList where, QString myOperator){
 }
 
 QString TableManagement::buildDeleteAll(){
-    return "DELETE * FROM " + nameTable();
+    return "DELETE FROM " + nameTable();
 }
 
 QString TableManagement::buildCreateTable(){
