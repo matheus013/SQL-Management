@@ -1,5 +1,6 @@
 #pragma once
 
+#include <queue>
 #include <QObject>
 #include <QList>
 #include "connection.h"
